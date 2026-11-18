@@ -1,0 +1,40 @@
+---
+# Front matter dashes are required
+---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* Deep space background */
+body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%) fixed;
+  color: #e6e9ff;
+}
+
+/* Twinkling stars */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 90px 120px, #fff, transparent),
+    radial-gradient(2px 2px at 160px 70px, #cfd8ff, transparent),
+    radial-gradient(1px 1px at 230px 180px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 300px 40px, #fff, transparent);
+  background-size: 320px 220px;
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.55; }
+  to   { opacity: 1; }
+}
+
+/* Let the stars show through the header and footer */
+.masthead, .page__footer {
+  background: transparent;
+  border: none;
+}
