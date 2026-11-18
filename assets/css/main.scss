@@ -7,7 +7,9 @@
 
 /* Deep space background */
 body {
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%) fixed;
+  background:
+    linear-gradient(rgba(5, 6, 15, 0.78), rgba(5, 6, 15, 0.92)),
+    url("{{ '/assets/images/background image.jpg' | relative_url }}") center / cover fixed no-repeat;
   color: #e6e9ff;
 }
 
